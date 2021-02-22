@@ -20,7 +20,7 @@ namespace FluentSerilogThirdParty.Services
 
         private void LogToAllLevels(string message)
         {
-            var scope = GetType().Namespace;
+            var scope = $"Scope-{GetType().Namespace}";
             using(_logger.BeginScope(scope))
             {
                 _logger.LogTrace(message);

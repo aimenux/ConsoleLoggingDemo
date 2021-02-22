@@ -6,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
 
 namespace JsonConfigNative
 {
@@ -37,11 +36,7 @@ namespace JsonConfigNative
                 })
                 .ConfigureLogging((hostingContext, loggingBuilder) =>
                 {
-                    loggingBuilder.AddDebug();
-                    loggingBuilder.AddEventLog();
-                    loggingBuilder.AddConsoleLogger();
                     loggingBuilder.AddNonGenericLogger();
-                    loggingBuilder.AddEventSourceLogger();
                     loggingBuilder.AddApplicationInsights(GetInstrumentationKey(hostingContext));
                 })
                 .ConfigureServices((_, services) =>
@@ -56,18 +51,6 @@ namespace JsonConfigNative
             const string key = "Logging:ApplicationInsights:InstrumentationKey";
             var instrumentationKey = hostingContext.Configuration.GetValue<string>(key);
             return instrumentationKey;
-        }
-
-        private static void AddConsoleLogger(this ILoggingBuilder loggingBuilder)
-        {
-            loggingBuilder.AddSimpleConsole(options =>
-            {
-                options.SingleLine = true;
-                options.IncludeScopes = true;
-                options.UseUtcTimestamp = true;
-                options.TimestampFormat = "[HH:mm:ss:fff] ";
-                options.ColorBehavior = LoggerColorBehavior.Enabled;
-            });
         }
 
         private static void AddNonGenericLogger(this ILoggingBuilder loggingBuilder)

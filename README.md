@@ -9,7 +9,7 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >
 > Logging frameworks used in the demo are :
 >
->> :pushpin: Native microsoft libraries
+>> :pushpin: Native microsoft tooling
 >>
 >> :pushpin: Serilog third party tooling
 >>
