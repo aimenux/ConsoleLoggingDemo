@@ -17,13 +17,13 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >
 > For Native and Serilog frameworks, i m providing two configuration ways :
 >
->> :writing_hand: `Fluent` : code driven way
->>
 >> :writing_hand: `Json` : json config driven way
+>>
+>> :writing_hand: `Fluent` : hard code driven way
 >>
 > For NLog framework, i m providing one configuration way :
 >
->> :writing_hand: `Fluent` : xml config driven way
+>> :writing_hand: `xml` : xml config driven way
 >>
 >
 > Logging targets used in the demo are : 
