@@ -1,3 +1,5 @@
+![.NET 5](https://github.com/aimenux/ConsoleLoggingDemo/workflows/.NET%205/badge.svg)
+
 # ConsoleLoggingDemo
 ```
 Using multiple logging frameworks (native and third party) in console applications
@@ -21,4 +23,4 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >>
 >
 
-**`Tools`** : vs19, net 5.0
+**`Tools`** : vs19, net 5.0, nlog, serilog
