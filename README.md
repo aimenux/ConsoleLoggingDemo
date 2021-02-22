@@ -22,5 +22,13 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >> :two: `Json` : json config driven way
 >>
 >
+> Logging targets used in the demo are : 
+>
+>> :pushpin: file target
+>>
+>> :pushpin: console target
+>>
+>> :pushpin: application insights target
+>
 
 **`Tools`** : vs19, net 5.0, nlog, serilog
