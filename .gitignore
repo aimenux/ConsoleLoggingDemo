@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/FluentConfigNative/appsettings.dev.json
+/FluentSerilogThirdParty/appsettings.dev.json
+/JsonConfigNative/appsettings.dev.json
+/JsonSerilogThirdParty/appsettings.dev.json

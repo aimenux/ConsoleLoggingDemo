@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FluentConfigNative": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENVIRONMENT": "DEV"
+      }
+    }
+  }
+}

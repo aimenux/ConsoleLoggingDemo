@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "JsonConfigNative": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENVIRONMENT": "DEV"
+      }
+    }
+  }
+}

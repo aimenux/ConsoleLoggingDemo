@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SerilogThirdParty": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENVIRONMENT": "DEV"
+      }
+    }
+  }
+}

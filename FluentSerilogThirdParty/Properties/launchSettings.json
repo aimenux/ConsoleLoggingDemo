@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FluentSerilogThirdParty": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENVIRONMENT": "DEV"
+      }
+    }
+  }
+}
