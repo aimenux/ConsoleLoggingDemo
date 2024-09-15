@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace JsonSerilogThirdParty.Services;
+namespace SerilogJsonConfig.Services;
 
 public class DummyService : IDummyService
 {

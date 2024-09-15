@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using JsonSerilogThirdParty.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Debugging;
+using Serilog.Events;
+using SerilogFluentConfig.Services;
 
-namespace JsonSerilogThirdParty;
+namespace SerilogFluentConfig;
 
 public static class Program
 {
@@ -29,8 +31,27 @@ public static class Program
             })
             .UseSerilog((hostingContext, loggerConfiguration) =>
             {
+                const string microsoft = @"Microsoft";
+                const string logFile = @"c:\logs\serilog.log";
+                const string key = "ApplicationInsights:ConnectionString";
+                const string outputTemplate = @"[{Timestamp:HH:mm:ss} {Level:u3}] [{ThreadId}] [{SourceContext}] {Message:lj} {NewLine}{Exception}";
+
                 SelfLog.Enable(Console.Error);
-                loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+                
+                var connectionString = hostingContext.Configuration.GetValue<string>(key);
+                
+                loggerConfiguration
+                    .MinimumLevel.Verbose()
+                    .MinimumLevel.Override(microsoft, LogEventLevel.Warning)
+                    .Enrich.FromLogContext()
+                    .Enrich.WithThreadId()
+                    .Enrich.WithThreadName()
+                    .Enrich.WithProcessName()
+                    .Enrich.WithMachineName()
+                    .Enrich.WithEnvironmentUserName()
+                    .WriteTo.Console(outputTemplate: outputTemplate)
+                    .WriteTo.File(logFile, rollingInterval:RollingInterval.Day)
+                    .WriteTo.ApplicationInsights(connectionString, TelemetryConverter.Traces);
             })
             .ConfigureServices((_, services) =>
             {

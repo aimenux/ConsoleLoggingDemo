@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace JsonConfigNative.Services;
+namespace NativeJsonConfig.Services;
 
 public interface IDummyService
 {

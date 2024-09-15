@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using FluentConfigNative.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.ApplicationInsights;
 using Microsoft.Extensions.Logging.Console;
+using NativeFluentConfig.Services;
 
-namespace FluentConfigNative;
+namespace NativeFluentConfig;
 
 public static class Program
 {

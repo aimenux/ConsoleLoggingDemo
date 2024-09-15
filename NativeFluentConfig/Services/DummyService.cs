@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace FluentConfigNative.Services;
+namespace NativeFluentConfig.Services;
 
 public class DummyService : IDummyService
 {

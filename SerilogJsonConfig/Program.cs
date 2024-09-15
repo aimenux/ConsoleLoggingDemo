@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
-using NLogThirdParty.Services;
+using Serilog;
+using Serilog.Debugging;
+using SerilogJsonConfig.Services;
 
-namespace NLogThirdParty;
+namespace SerilogJsonConfig;
 
 public static class Program
 {
@@ -25,7 +26,11 @@ public static class Program
             {
                 loggingBuilder.ClearProviders();
                 loggingBuilder.AddDefaultLogger();
-                loggingBuilder.AddNLog();
+            })
+            .UseSerilog((hostingContext, loggerConfiguration) =>
+            {
+                SelfLog.Enable(Console.Error);
+                loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
             })
             .ConfigureServices((_, services) =>
             {

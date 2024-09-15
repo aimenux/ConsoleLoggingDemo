@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace FluentSerilogThirdParty.Services;
+namespace NLogXmlConfig.Services;
 
 public class DummyService : IDummyService
 {

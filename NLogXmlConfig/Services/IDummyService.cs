@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace FluentSerilogThirdParty.Services;
+namespace NLogXmlConfig.Services;
 
 public interface IDummyService
 {

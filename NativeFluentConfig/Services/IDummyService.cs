@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NLogThirdParty.Services;
+namespace NativeFluentConfig.Services;
 
 public interface IDummyService
 {

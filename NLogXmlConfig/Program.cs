@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using JsonConfigNative.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
+using NLogXmlConfig.Services;
 
-namespace JsonConfigNative;
+namespace NLogXmlConfig;
 
 public static class Program
 {
@@ -22,15 +23,16 @@ public static class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureLogging((_, loggingBuilder) =>
             {
+                loggingBuilder.ClearProviders();
                 loggingBuilder.AddDefaultLogger();
-                loggingBuilder.AddApplicationInsights();
+                loggingBuilder.AddNLog();
             })
             .ConfigureServices((_, services) =>
             {
                 services.AddTransient<IDummyService, DummyService>();
             })
             .UseConsoleLifetime();
-    
+
     private static void AddDefaultLogger(this ILoggingBuilder loggingBuilder)
     {
         var categoryName = typeof(Program).Namespace!;

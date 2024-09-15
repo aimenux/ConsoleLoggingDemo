@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace JsonConfigNative.Services;
+namespace NativeJsonConfig.Services;
 
 public class DummyService : IDummyService
 {
