@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace FluentSerilogThirdParty.Services
+namespace FluentSerilogThirdParty.Services;
+
+public interface IDummyService
 {
-    public interface IDummyService
-    {
-        Task DoNothingAsync();
-    }
+    Task DoNothingAsync();
 }

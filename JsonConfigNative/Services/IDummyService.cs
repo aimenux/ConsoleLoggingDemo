@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace JsonConfigNative.Services
+namespace JsonConfigNative.Services;
+
+public interface IDummyService
 {
-    public interface IDummyService
-    {
-        Task DoNothingAsync();
-    }
+    Task DoNothingAsync();
 }

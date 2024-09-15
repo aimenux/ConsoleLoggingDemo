@@ -13,7 +13,7 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >>
 >> :pushpin: Serilog third party tooling
 >>
->> :pushpin: NLog thrid party tooling
+>> :pushpin: NLog third party tooling
 >
 > For Native and Serilog frameworks, i m providing two configuration ways :
 >
@@ -35,4 +35,4 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >> :pushpin: application insights target
 >
 
-**`Tools`** : vs19, net 5.0, nlog, serilog
+**`Tools`** : net 8.0, nlog, serilog

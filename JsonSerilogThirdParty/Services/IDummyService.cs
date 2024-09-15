@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace JsonSerilogThirdParty.Services
+namespace JsonSerilogThirdParty.Services;
+
+public interface IDummyService
 {
-    public interface IDummyService
-    {
-        Task DoNothingAsync();
-    }
+    Task DoNothingAsync();
 }

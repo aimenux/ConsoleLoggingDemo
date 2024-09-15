@@ -352,3 +352,6 @@ MigrationBackup/
 /FluentSerilogThirdParty/appsettings.dev.json
 /JsonConfigNative/appsettings.dev.json
 /JsonSerilogThirdParty/appsettings.dev.json
+
+# JetBrains
+.idea/*

@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace NLogThirdParty.Services
+namespace NLogThirdParty.Services;
+
+public interface IDummyService
 {
-    public interface IDummyService
-    {
-        Task DoNothingAsync();
-    }
+    Task DoNothingAsync();
 }

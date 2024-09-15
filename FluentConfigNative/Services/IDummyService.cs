@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace FluentConfigNative.Services
+namespace FluentConfigNative.Services;
+
+public interface IDummyService
 {
-    public interface IDummyService
-    {
-        Task DoNothingAsync();
-    }
+    Task DoNothingAsync();
 }
