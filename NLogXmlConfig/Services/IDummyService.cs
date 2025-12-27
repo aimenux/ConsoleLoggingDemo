@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace NLogXmlConfig.Services;
+﻿namespace NLogXmlConfig.Services;
 
 public interface IDummyService
 {

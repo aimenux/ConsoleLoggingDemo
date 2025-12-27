@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace NativeFluentConfig.Services;
+﻿namespace NativeFluentConfig.Services;
 
 public interface IDummyService
 {

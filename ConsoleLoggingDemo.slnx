@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/NativeWay/">
+    <Project Path="NativeFluentConfig/NativeFluentConfig.csproj" />
+    <Project Path="NativeJsonConfig/NativeJsonConfig.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".github/workflows/ci.yml" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/ThirdPartyWay/">
+    <Project Path="NLogXmlConfig/NLogXmlConfig.csproj" />
+    <Project Path="SerilogFluentConfig/SerilogFluentConfig.csproj" />
+    <Project Path="SerilogJsonConfig/SerilogJsonConfig.csproj" />
+  </Folder>
+</Solution>

@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace SerilogJsonConfig.Services;
+﻿namespace SerilogJsonConfig.Services;
 
 public interface IDummyService
 {

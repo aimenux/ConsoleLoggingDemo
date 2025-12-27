@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "FluentSerilogThirdParty": {
+    "Dev": {
       "commandName": "Project",
       "environmentVariables": {
-        "ENVIRONMENT": "DEV"
+        "ENVIRONMENT": "Development"
       }
     }
   }

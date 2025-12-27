@@ -35,4 +35,4 @@ Using multiple logging frameworks (native and third party) in console applicatio
 >> :pushpin: application insights target
 >
 
-**`Tools`** : net 8.0, nlog, serilog
+**`Tools`** : net 10.0, nlog, serilog

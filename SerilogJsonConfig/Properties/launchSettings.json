@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "SerilogThirdParty": {
+    "Dev": {
       "commandName": "Project",
       "environmentVariables": {
-        "ENVIRONMENT": "DEV"
+        "ENVIRONMENT": "Development"
       }
     }
   }

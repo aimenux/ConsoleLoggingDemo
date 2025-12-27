@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace SerilogFluentConfig.Services;
+﻿namespace SerilogFluentConfig.Services;
 
 public interface IDummyService
 {
