@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Dev": {
+    "NativeFluentConfig": {
       "commandName": "Project",
       "environmentVariables": {
         "ENVIRONMENT": "Development"

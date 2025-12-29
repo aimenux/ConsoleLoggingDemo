@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Dev": {
+    "NLogXmlConfig": {
       "commandName": "Project",
       "environmentVariables": {
         "ENVIRONMENT": "Development"

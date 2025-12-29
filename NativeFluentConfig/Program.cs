@@ -45,46 +45,49 @@ public static class Program
 #endif
     }
         
-    private static void AddApplicationInsights(this ILoggingBuilder loggingBuilder, HostBuilderContext hostingContext)
+    extension(ILoggingBuilder loggingBuilder)
     {
-        const string key = "Logging:ApplicationInsights:ConnectionString";
-        var connectionString = hostingContext.Configuration.GetValue<string>(key);
-        loggingBuilder.AddApplicationInsights(
-            config => config.ConnectionString = connectionString,
-            options => options.IncludeScopes = true);
-    }
-
-    private static void AddConsoleLogger(this ILoggingBuilder loggingBuilder)
-    {
-        loggingBuilder.AddSimpleConsole(options =>
+        private void AddApplicationInsights(HostBuilderContext hostingContext)
         {
-            options.SingleLine = true;
-            options.IncludeScopes = true;
-            options.UseUtcTimestamp = true;
-            options.TimestampFormat = "[HH:mm:ss:fff] ";
-            options.ColorBehavior = LoggerColorBehavior.Enabled;
-        });
-    }
+            const string key = "Logging:ApplicationInsights:ConnectionString";
+            var connectionString = hostingContext.Configuration.GetValue<string>(key);
+            loggingBuilder.AddApplicationInsights(
+                config => config.ConnectionString = connectionString,
+                options => options.IncludeScopes = true);
+        }
 
-    private static void AddFluentLoggingFilters(this ILoggingBuilder loggingBuilder)
-    {
-        const string microsoft = @"Microsoft";
-
-        loggingBuilder.AddFilter<ConsoleLoggerProvider>("*", LogLevel.Trace);
-        loggingBuilder.AddFilter<ConsoleLoggerProvider>(microsoft, LogLevel.Information);
-
-        loggingBuilder.AddFilter<ApplicationInsightsLoggerProvider>("*", LogLevel.Information);
-        loggingBuilder.AddFilter<ApplicationInsightsLoggerProvider>(microsoft, LogLevel.Warning);
-    }
-
-    private static void AddDefaultLogger(this ILoggingBuilder loggingBuilder)
-    {
-        var categoryName = typeof(Program).Namespace!;
-        var services = loggingBuilder.Services;
-        services.AddSingleton(serviceProvider =>
+        private void AddConsoleLogger()
         {
-            var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-            return loggerFactory.CreateLogger(categoryName);
-        });
+            loggingBuilder.AddSimpleConsole(options =>
+            {
+                options.SingleLine = true;
+                options.IncludeScopes = true;
+                options.UseUtcTimestamp = true;
+                options.TimestampFormat = "[HH:mm:ss:fff] ";
+                options.ColorBehavior = LoggerColorBehavior.Enabled;
+            });
+        }
+
+        private void AddFluentLoggingFilters()
+        {
+            const string microsoft = @"Microsoft";
+
+            loggingBuilder.AddFilter<ConsoleLoggerProvider>("*", LogLevel.Trace);
+            loggingBuilder.AddFilter<ConsoleLoggerProvider>(microsoft, LogLevel.Information);
+
+            loggingBuilder.AddFilter<ApplicationInsightsLoggerProvider>("*", LogLevel.Information);
+            loggingBuilder.AddFilter<ApplicationInsightsLoggerProvider>(microsoft, LogLevel.Warning);
+        }
+
+        private void AddDefaultLogger()
+        {
+            var categoryName = typeof(Program).Namespace!;
+            var services = loggingBuilder.Services;
+            services.AddSingleton(serviceProvider =>
+            {
+                var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+                return loggerFactory.CreateLogger(categoryName);
+            });
+        }
     }
 }
